@@ -1,6 +1,6 @@
 class Person
   attr_accessor :name, :age
-  attr_reader  :rentals
+  attr_reader :rentals
 
   def initialize(age, name: 'Unknown', parent_permission: true)
     super()
