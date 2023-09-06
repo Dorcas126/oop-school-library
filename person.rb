@@ -1,12 +1,18 @@
 class Person
-  attr_accessor :name, :age
-  attr_reader :id
+  attr_accessor :name, :age, :rentals
 
   def initialize(age, name: 'Unknown', parent_permission: true)
-    @id = Random.rand(1..1000)
+    super()
     @age = age
     @name = name
     @parent_permission = parent_permission
+    @rentals = []
+  end
+
+  def add_rental(date, book)
+    rental = Rental.new(date, self, book)
+    @rentals << rental
+    rental
   end
 
   private
