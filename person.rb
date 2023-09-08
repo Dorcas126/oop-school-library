@@ -18,7 +18,9 @@ class Person < Nameable
   end
 
   def can_use_services?
-    nil unless of_age || @parent_permission
+    return false if of_age || @parent_permission
+
+    false
   end
 
   def add_rental(book, date)
