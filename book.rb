@@ -1,7 +1,11 @@
+require 'securerandom'
+
 class Book
-  attr_accessor :title, :author, :rentals
+  attr_accessor :title, :author
+  attr_reader :id, :rentals
 
   def initialize(title, author)
+    @id = SecureRandom.random_number(1000)
     @title = title
     @author = author
     @rentals = []
